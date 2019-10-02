@@ -19,5 +19,9 @@ public class Fish extends AnimalsAbs implements MoverInt
 	{
 		return "Eggs";
 	}
-	
+	@Override
+	public String toString()
+	{
+		return "Fish{ID:"+id+" Name:"+name+" Year:"+yearDiscovered+"}";
+	}		
 }

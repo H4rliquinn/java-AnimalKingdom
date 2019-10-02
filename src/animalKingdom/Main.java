@@ -23,5 +23,9 @@ public class Main
 		Fish catfish = new Fish("Catfish",1758);
 		Fish perch = new Fish("Perch",1758);
 
+		System.out.println(panda);
+		System.out.println(zebra);
+		System.out.println(toucan);
+		System.out.println(perch);
 	}
 }

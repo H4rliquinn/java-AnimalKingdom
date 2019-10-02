@@ -19,4 +19,10 @@ public class Mammals extends AnimalsAbs implements MoverInt
 	{
 		return "Live Births";
 	}
+
+	@Override
+	public String toString()
+	{
+		return "Mammal{ID:"+id+" Name:"+name+" Year:"+yearDiscovered+"}";
+	}	
 }

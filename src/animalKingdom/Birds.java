@@ -19,4 +19,9 @@ public class Birds extends AnimalsAbs implements MoverInt
 	{
 		return "Eggs";
 	}
+	@Override
+	public String toString()
+	{
+		return "Bird{ID:"+id+" Name:"+name+" Year:"+yearDiscovered+"}";
+	}	
 }
