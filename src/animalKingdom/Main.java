@@ -4,6 +4,20 @@ import java.util.*;
 public class Main
 {
 
+	public static ArrayList<AnimalsAbs> filteredList = new ArrayList<AnimalsAbs>();
+
+	public static void printAnimals(ArrayList<AnimalsAbs> animals, Tester tester)
+	{
+		for (AnimalsAbs a:animals)
+		{
+			if(tester.test(a))
+			{
+				System.out.println(a.toString());
+				filteredList.add(a);
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		Mammals panda = new Mammals("Panda",1869);
 		Mammals zebra  = new Mammals("Zebra",1778);
@@ -48,11 +62,28 @@ public class Main
 		animals.add(catfish);
 		animals.add(perch);
 
-		
-		
+		//printVehicles(myList, a->a.stuff()<0);
+		System.out.println("***Original List****");
 		for(AnimalsAbs a:animals)
 		{
 			System.out.println(a.toString());
 		}
+
+		System.out.println();
+
+		System.out.println("***Decending Order By Year***");
+		animals.sort((a1,a2)->a2.getYearDiscovered()-a1.getYearDiscovered());
+        animals.forEach((a)->System.out.println(a.toString()));
+		System.out.println();
+
+		System.out.println("***Alphabetically***");
+		animals.sort((a1,a2)->a1.getName().compareToIgnoreCase(a2.getName()));
+        animals.forEach((a)->System.out.println(a.toString()));
+		System.out.println();
+
+		System.out.println("***Order By Movement***");
+		animals.sort((a1,a2)->a1.move().compareToIgnoreCase(a2.move()));
+        animals.forEach((a)->System.out.println("Movement: "+a.move()+"\t"+a.toString()));
+		System.out.println();
 	}
 }

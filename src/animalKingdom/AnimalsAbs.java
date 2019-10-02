@@ -14,6 +14,20 @@ public abstract class AnimalsAbs
 		this.name=name;
 		this.yearDiscovered=yearDiscovered;
 	}
+	public int getId()
+	{
+		return id;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public int getYearDiscovered()
+	{
+		return yearDiscovered;
+	}
+
+
 	public String eat()
 	{
 		return "Yum";
