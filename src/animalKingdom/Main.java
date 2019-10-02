@@ -12,8 +12,7 @@ public class Main
 		{
 			if(tester.test(a))
 			{
-				System.out.println(a.toString());
-				filteredList.add(a);
+				System.out.println("Item: "+a.toString()+"\nBreath: "+a.breath()+"\tMove: "+a.move()+"\tReproduce: "+a.reproduce()+"\n");
 			}
 		}
 	}
@@ -76,14 +75,33 @@ public class Main
         animals.forEach((a)->System.out.println(a.toString()));
 		System.out.println();
 
+		System.out.println("***Order By Movement***");
+		animals.sort((a1,a2)->a1.move().compareToIgnoreCase(a2.move()));
+        animals.forEach((a)->System.out.println("Movement: "+a.move()+"\t"+a.toString()));
+		System.out.println();
+
 		System.out.println("***Alphabetically***");
 		animals.sort((a1,a2)->a1.getName().compareToIgnoreCase(a2.getName()));
         animals.forEach((a)->System.out.println(a.toString()));
 		System.out.println();
 
-		System.out.println("***Order By Movement***");
-		animals.sort((a1,a2)->a1.move().compareToIgnoreCase(a2.move()));
-        animals.forEach((a)->System.out.println("Movement: "+a.move()+"\t"+a.toString()));
+		System.out.println("***Animals With Lungs***");
+		printAnimals(animals,a->(a.breath()=="Lungs"));
 		System.out.println();
+
+		System.out.println("***Animals With Lungs Named in 1758***");
+		printAnimals(animals,a->(a.breath()=="Lungs")&&(a.getYearDiscovered()==1758));
+		System.out.println();
+
+		System.out.println("***Animals With Lungs That Lay Eggs***");
+		printAnimals(animals,a->(a.breath()=="Lungs")&&(a.reproduce()=="Eggs"));
+		System.out.println();
+
+		System.out.println("***Animals Named In 1758 Alphabetically***"); //already sorted above
+		printAnimals(animals,a->(a.getYearDiscovered()==1758));
+		System.out.println();
+
+		System.out.println("***Mammals Alphabetically***"); //already sorted above
+		printAnimals(animals,a->(a instanceof Mammals));
 	}
 }
