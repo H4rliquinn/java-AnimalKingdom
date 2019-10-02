@@ -20,12 +20,39 @@ public class Main
 		Birds swan = new Birds("Swan",1758);
 
 		Fish salmon = new Fish("Salmon",1758);
-		Fish catfish = new Fish("Catfish",1758);
+		Fish catfish = new Fish("Catfish",1817);
 		Fish perch = new Fish("Perch",1758);
 
 		System.out.println(panda);
 		System.out.println(zebra);
 		System.out.println(toucan);
 		System.out.println(perch);
+
+		ArrayList<AnimalsAbs> animals = new ArrayList<AnimalsAbs>();
+		//Mammals
+		animals.add(panda);
+		animals.add(zebra);
+		animals.add(koala);
+		animals.add(sloth);
+		animals.add(armadillo);
+		animals.add(raccoon);
+		animals.add(bigfoot);
+		//Birds
+		animals.add(pigeon);
+		animals.add(peacock);
+		animals.add(toucan);
+		animals.add(parrot);
+		animals.add(swan);
+		//Fish
+		animals.add(salmon);
+		animals.add(catfish);
+		animals.add(perch);
+
+		
+		
+		for(AnimalsAbs a:animals)
+		{
+			System.out.println(a.toString());
+		}
 	}
 }
