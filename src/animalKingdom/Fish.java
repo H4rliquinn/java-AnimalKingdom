@@ -1,10 +1,10 @@
 package animalKingdom;
 
-public class Fish extends AnimalsAbs
+public class Fish extends AnimalsAbs implements MoverInt
 {
-	public Fish(String name,int food,int yearDiscovered)
+	public Fish(String name,int yearDiscovered)
 	{
-		super(name,food,yearDiscovered);
+		super(name,yearDiscovered);
 	}
 
 	public String  move()
